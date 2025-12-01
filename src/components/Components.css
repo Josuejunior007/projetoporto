@@ -1,0 +1,593 @@
+/* === ESTRUTURA PRINCIPAL === */
+.app {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.app-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* === CARDS === */
+.card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  overflow: hidden;
+  width: 100%;
+  max-width: 800px;
+  padding: 32px;
+  margin: 0 auto;
+}
+
+.card-large {
+  max-width: 1200px;
+}
+
+/* === BOTÕES === */
+.btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+}
+
+.btn-secondary {
+  background: #f8f9fa;
+  color: #666;
+  border: 2px solid #e9ecef;
+}
+
+.btn-secondary:hover {
+  background: #e9ecef;
+  border-color: #dee2e6;
+}
+
+.btn-outline {
+  background: transparent;
+  color: #667eea;
+  border: 2px solid #667eea;
+}
+
+.btn-outline:hover {
+  background: #667eea;
+  color: white;
+}
+
+/* === FORMULÁRIOS === */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 8px;
+  color: #333;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.form-input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  background-color: #f8f9fa;
+  font-family: inherit;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #667eea;
+  background-color: white;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.form-select {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  font-size: 14px;
+  background-color: #f8f9fa;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.form-select:focus {
+  outline: none;
+  border-color: #667eea;
+  background-color: white;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.form-textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  background-color: #f8f9fa;
+  font-family: inherit;
+  resize: vertical;
+  min-height: 100px;
+}
+
+.form-textarea:focus {
+  outline: none;
+  border-color: #667eea;
+  background-color: white;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+/* === BUSCA === */
+.search-box {
+  position: relative;
+  margin-bottom: 24px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 12px 16px 12px 44px;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  font-size: 14px;
+  background-color: white;
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.search-icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #666;
+  pointer-events: none;
+}
+
+/* === GRIDS DE CARDS === */
+.architecture-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin: 24px 0;
+}
+
+.architecture-card {
+  background: #f8f9fa;
+  border: 2px solid #e9ecef;
+  border-radius: 12px;
+  padding: 24px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  user-select: none;
+}
+
+.architecture-card:hover {
+  border-color: #667eea;
+  background: white;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.2);
+}
+
+.architecture-card.selected {
+  border-color: #667eea;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+}
+
+/* === CARDS DE SERVIÇO === */
+.service-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.service-card {
+  background: white;
+  border: 2px solid #e9ecef;
+  border-radius: 12px;
+  padding: 20px;
+  transition: all 0.3s ease;
+}
+
+.service-card:hover {
+  border-color: #667eea;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.1);
+}
+
+.service-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.service-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+.service-type {
+  display: inline-block;
+  padding: 4px 8px;
+  background: #e3f2fd;
+  color: #1976d2;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.service-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #666;
+  font-size: 14px;
+}
+
+.service-category {
+  color: #999;
+  font-size: 12px;
+}
+
+/* === CARDS DE TEMPLATE === */
+.template-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.template-card {
+  background: white;
+  border: 2px solid #e9ecef;
+  border-radius: 12px;
+  padding: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  user-select: none;
+}
+
+.template-card:hover {
+  border-color: #667eea;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.1);
+}
+
+.template-card.selected {
+  border-color: #667eea;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.template-card.selected .template-name,
+.template-card.selected .template-description {
+  color: white;
+}
+
+.template-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.template-description {
+  color: #666;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* === NAVEGAÇÃO === */
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.nav-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #333;
+}
+
+.nav-steps {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #666;
+  font-size: 14px;
+  flex-wrap: wrap;
+}
+
+.step {
+  padding: 6px 12px;
+  border-radius: 6px;
+  background: #f8f9fa;
+  white-space: nowrap;
+}
+
+.step.active {
+  background: #667eea;
+  color: white;
+}
+
+/* === DIVISÓRIAS === */
+.divider {
+  height: 1px;
+  background: #e9ecef;
+  margin: 24px 0;
+}
+
+/* === CABEÇALHOS DE SEÇÃO === */
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.section-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* === LAYOUT DE FORMULÁRIOS === */
+.form-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  margin-top: 24px;
+}
+
+/* === ESTADOS VAZIOS === */
+.empty-state {
+  text-align: center;
+  padding: 40px;
+  color: #666;
+  grid-column: 1/-1;
+}
+
+.empty-state p {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+/* === RESPONSIVIDADE === */
+@media (max-width: 768px) {
+  .app {
+    padding: 10px;
+  }
+  
+  .card {
+    padding: 20px;
+  }
+  
+  .architecture-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .service-details {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  
+  .navigation {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .nav-steps {
+    justify-content: flex-start;
+  }
+  
+  .form-actions {
+    flex-direction: column;
+  }
+  
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    padding: 16px;
+    border-radius: 12px;
+  }
+  
+  .nav-title {
+    font-size: 20px;
+  }
+  
+  .section-title {
+    font-size: 18px;
+  }
+
+  /* Botão de excluir */
+  .btn-danger {
+    background: transparent;
+    color: #ff6b6b;
+    border: 1px solid #ff6b6b;
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+
+  .btn-danger:hover {
+    background: #ff6b6b;
+    color: white;
+  }
+
+/* Ajuste no header do service card */
+  .service-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 12px;
+  }
+
+  /* Service Manager Styles */
+  .service-manager-container {
+    max-width: 1100px;
+    height: 85vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .service-metrics {
+    display: flex;
+    gap: 20px;
+    height: 100%;
+  }
+
+  .metric-card {
+    flex: 1;
+    background: #f7f7f7;
+    padding: 15px;
+    border-radius: 10px;
+  }
+
+  .metric-display {
+    height: 140px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  .requests-metric {
+    background: #dce6ff;
+  }
+
+  .latency-metric {
+    background: #ffe5c8;
+  }
+
+  .errors-metric {
+    background: #ffc8c8;
+  }
+
+  /* Badges para tipos */
+  .type-badge {
+    font-size: 12px;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: 600;
+  }
+
+  .api-badge {
+    color: #667eea;
+    background: #f0f4ff;
+  }
+
+  .db-badge {
+    color: #10b981;
+    background: #f0fdf4;
+  }
+
+  .template-badge {
+    color: #8b5cf6;
+    background: #faf5ff;
+  }
+  
+
+}
+
+/* Header styles */
+header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 16px 32px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+header nav {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+header nav a {
+  color: white;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+
+header nav a:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+/* Ajuste para o app quando tem header */
+.app-with-header {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Ajuste para o app-container quando tem header */
+.app-container-with-header {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
